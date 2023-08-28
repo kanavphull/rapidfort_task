@@ -12,7 +12,7 @@ Before running the app, ensure you have the following installed:
 - Docker
 
 ##### Building and Running with Docker (Windows)
-
+The script `start.bat` creates docker image for source code and then `creates` and `runs` the docker container.
 - Start the Docker container using the provided script `start.bat`:
 ```
 start.bat <image-name>
