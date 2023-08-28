@@ -2,15 +2,6 @@
 
 This documentation provides an overview of the File Upload App, explaining its functionality and how to run it using Docker.
 
-### Table of Contents
-- Introduction
-- Functionality
-- Running the App
-- Prerequisites
-- Building and Running with Docker
-- Using the App
-- Troubleshooting
-- Conclusion
 ### Introduction
 The File Upload App is a simple web application built using Flask, a Python web framework. It allows users to upload files to the server and view details about the uploaded files, including their size and extension. The app consists of a backend written in Python and a frontend built with HTML and JavaScript.
 
@@ -20,21 +11,25 @@ The File Upload App is a simple web application built using Flask, a Python web 
 Before running the app, ensure you have the following installed:
 - Docker
 
-##### Building and Running with Docker
+##### Building and Running with Docker (Windows)
 
--Build the Docker image using the following command:
+- Start the Docker container using the provided script `start.bat`:
 ```
-docker build -t file-upload-app .
+start.bat <image-name>
 ```
+Note: Set any name for your image. This will be hosted on localhost port 8080
 
-Replace file-upload-app with the desired image name.
-- Run the Docker container using the following command:
+##### Custom Image Creation and Docker Run Command
 ```
-docker run -p 5000:80 file-upload-app
+docker build -t <image-name> <project-directory>
 ```
-
-This maps port 5000 on your local machine to port 80 on the container.
+Run the Docker container using the following command:
+```
+docker run -p <port>:8080 <image-name>
+```
+Note: Set port value on which you want to host your app
 ### Using the App
-Open a web browser and go to http://localhost:5000/.
+Open a web browser and go to http://localhost:8080/.
 You'll see a page with a file upload form. Choose a file.
 After uploading, the app will display the file details, including the filename, size, and extension, on the same page.
+This will temporarily store the file to server and the file can be further processed for metadata extraction.
